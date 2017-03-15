@@ -13249,7 +13249,7 @@ ERER0TPSAYqIiIiIiJ6RDlBERERERPSMdIAiIiIiIqJn/A+csRsYJZPw2wAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I will use the model with max_depth = 6 for this example. As more training points are added, the score of the training curve decreases. However, the opposite is true for the testing score, as it increases with more training points. I believe more training points would benefit this model, since it seems to be overfitting the data with a relatively large gap between the training score and testing score.</p>
+<p><strong>Answer: </strong> I will use the model with max_depth = 6 for this example. As more training points are added, the score of the training curve decreases. However, the opposite is true for the testing score, as it increases with more training points. More training points would not necessarily benefit this model, since the model has started to diverge from its optimal score.</p>
 
 </div>
 </div>
@@ -13766,7 +13766,7 @@ YUnPGGNM0LCkZ4wxJmj8P8imVzk6akBbAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is the process of trying different combinations of parameters to find the best performing algorithm.</p>
+<p><strong>Answer: </strong> Grid search is the process of trying different combinations of parameters to find the best performing algorithm. When using sklearn's grid_search function every combination of the parameters passed to the function will be tested to find the best performing combination.</p>
 
 </div>
 </div>
