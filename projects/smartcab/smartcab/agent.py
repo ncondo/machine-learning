@@ -44,7 +44,8 @@ class LearningAgent(Agent):
             self.epsilon = 0
             self.alpha = 0
         else:
-            self.epsilon = self.epsilon - 0.005
+            self.epsilon = self.epsilon - 0.05
+            #self.epsilon = self.epsilon - 0.005
 
         return
 
@@ -82,8 +83,15 @@ class LearningAgent(Agent):
             if self.Q[state][action] > maxQ:
                 maxQ = self.Q[state][action]
                 maxA = action
+        # If two maxQ values are equal, choose a random action between them
+        same_max = []
+        for action in self.valid_actions:
+            if self.Q[state][action] == maxQ:
+                same_max.append(action)
 
-        return maxA, maxQ 
+        maxA = random.choice(same_max)
+
+        return maxA, maxQ
 
 
     def createQ(self, state):
@@ -193,7 +201,7 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay=0.01, log_metrics=True, optimized=True)
+    sim = Simulator(env, update_delay=0.01, log_metrics=True)
     
     ##############
     # Run the simulator
